@@ -4,7 +4,11 @@
       <v-spacer/>
         <v-toolbar-title> 
           <nuxt-link to="/">
-            <img src="~/assets/seoul-bike.png" height="30" class="mt-4"/>
+            <v-btn icon plain :ripple="false" >
+              <v-icon large>
+                {{ mdiHomeVariant }}
+              </v-icon>
+            </v-btn>
           </nuxt-link>
         </v-toolbar-title>
       <v-spacer/>
@@ -16,14 +20,19 @@
     </v-main>
     <v-footer app>
       <v-spacer />
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span>&copy; {{ new Date().getFullYear() }} Framework Guide</span>
       <v-spacer />
     </v-footer>
   </v-app>
 </template>
 
 <script>
+import { mdiHomeVariant } from '@mdi/js'
 export default {
   name: 'DefaultLayout',
+
+  setup() {
+    return { mdiHomeVariant }
+  }
 }
 </script>
